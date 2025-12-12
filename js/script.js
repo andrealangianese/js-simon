@@ -1,3 +1,29 @@
+//PREPARAZIONE
+
+//selezioniamo tutti gli input e li importiamo
+
+//selezioniamo gli output da importare 
+
+
+//ELABORAZIONE
+
+// gestione dell'evento di controllo dopo il click
+
+//controllo dei numeri corretti e feedback all'user
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //funzione per creare 5 numeri random non equivoci
 
 //debug in console
