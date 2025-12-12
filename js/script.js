@@ -29,13 +29,18 @@ const okButton = document.querySelector(".btn-primary");
 
 let timer;
 
-let seconds = 30;
+let seconds = 10;
 
 countdown.innerText = seconds
 
 timer =setInterval( () => {
     //decremento i secondi per countdown
     countdown.innerText = --seconds;
+
+    // quando il countdown arriva a 0 blocco tutto
+    if (seconds === 0) {
+        clearInterval(timer);
+    }
 }, 1000)
 //ELABORAZIONE
 
