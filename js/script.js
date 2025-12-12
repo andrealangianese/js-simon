@@ -30,22 +30,52 @@ const okButton = document.querySelector(".btn-primary");
 
 let timer;
 
-let seconds = 10;
+let seconds = 3;
+
+//qua stiamo mostrando i 5 numeri dalla funzione che abbiamo creato precedentemente
+numberlist.innerText = (getArrRadnomNumInRangeTotEl(1, 50, 5));
+
 
 countdown.innerText = seconds
 
-timer =setInterval( () => {
+timer = setInterval(() => {
     //decremento i secondi per countdown
     countdown.innerText = --seconds;
 
     // quando il countdown arriva a 0 blocco tutto
     if (seconds === 0) {
         clearInterval(timer);
+
+        //quando il timer arriva a 0 devo rimuovere dalla pagina i numeri
+
+        numberlist.innerText = "";
+
+        //e devo mostrare il form da far compilare all'utente
+
+        form.classList.remove("d-none");
+
+        // rimuovo stringa "memorizza numeri...."
+
+        //document.getElementById("instructions").remove();
+
+        //aggiungo stringa inserisci i numeri che ti ricordi
+//----------------------------------------------__----------------------
+
+        // metodo per sostituire un p con un altro testo
+        
+        let sostituzionep =document.getElementById("instructions");
+
+        let sostitutop = document.createElement("p");
+
+        sostitutop.textContent = "Vediamo se ti riscordi sti numeri!!";
+
+        sostituzionep.replaceWith(sostitutop);
+
+
     }
 }, 1000)
 //----------------------------------------------__----------------------
- //qua stiamo mostrando i 5 numeri dalla funzione che abbiamo creato precedentemente
-numberlist.innerText = (getArrRadnomNumInRangeTotEl(1, 50, 5));
+
 
 
 //ELABORAZIONE
