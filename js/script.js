@@ -32,8 +32,6 @@ const inputs = document.querySelectorAll("#input-group input");
 
 //variabile del timer
 
-let timer;
-
 let seconds = 10;
 
 //qua stiamo mostrando i 5 numeri dalla funzione che abbiamo creato precedentemente
@@ -42,7 +40,7 @@ numberlist.innerText = (getArrRadnomNumInRangeTotEl(1, 50, 5));
 
 countdown.innerText = seconds
 
-timer = setInterval(() => {
+let timer = setInterval(() => {
     //decremento i secondi per countdown
     countdown.innerText = --seconds;
 
@@ -60,20 +58,20 @@ timer = setInterval(() => {
 
         // rimuovo stringa "memorizza numeri...."
 
-        //document.getElementById("instructions").remove();
+        document.getElementById("instructions").innerText = "Vediamo se ti riscordi sti numeri!!";
 
         //aggiungo stringa inserisci i numeri che ti ricordi
         //----------------------------------------------__----------------------
 
         // metodo per sostituire un p con un altro testo
 
-        let sostituzionep = document.getElementById("instructions");
+        // let sostituzionep = document.getElementById("instructions");
 
-        let sostitutop = document.createElement("p");
+        // let sostitutop = document.createElement("p");
 
-        sostitutop.textContent = "Vediamo se ti riscordi sti numeri!!";
+        // sostitutop.textContent = "Vediamo se ti riscordi sti numeri!!";
 
-        sostituzionep.replaceWith(sostitutop);
+        // sostituzionep.replaceWith(sostitutop);
 
 
     }
@@ -82,6 +80,7 @@ timer = setInterval(() => {
 
 //ELABORAZIONE
 
+//creo costante perchè non mi fa usare numberlist perchè all'interno di un ul
 const randomNumbers = getArrRadnomNumInRangeTotEl(1, 50, 5);
 numberlist.innerText = randomNumbers.join(", ")
 
@@ -103,7 +102,7 @@ form.addEventListener("submit", function (e) {
         //controllo dei numeri
         for (let x = 0; x < randomNumbers.length; x++) {
             //se i numeri corrispondono li pusho nell'array vuoto
-            if (randomNumbers[x] === userNum) {
+            if (randomNumbers[x] === userNum && !numberCorrect.includes(userNum)) {//con && non mi fa inserire 2 numeri uguali, me ne valida solo uno
                 numberCorrect.push(userNum);
 
             }
