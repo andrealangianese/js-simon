@@ -1,11 +1,44 @@
+// Visualizzare in pagina 5 numeri casuali. Da lì parte un timer di 30 secondi.
+// Dopo 30 secondi i numeri scompaiono e appaiono invece 5 input in cui l'utente deve inserire i numeri che ha visto precedentemente, nell'ordine che preferisce.
+
+// Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
+
 //PREPARAZIONE
 
 //selezioniamo tutti gli input e li importiamo
 
 //selezioniamo gli output da importare 
+//lista dove vengono mostrati i numeri
+const numberlist = document.getElementById("numbers-list");
 
+//const del countdown
 
+const countdown = document.getElementById("countdown");
+
+//form per l'inserimento dei numeri
+
+const form = document.getElementById("answers-form");
+
+// conferma infserimento dati
+
+const okButton = document.querySelector(".btn-primary");
+
+//creazione cronometro di 30 secondi
+
+//variabile del timer
+
+let timer;
+
+let seconds = 30;
+
+countdown.innerText = seconds
+
+timer =setInterval( () => {
+    //decremento i secondi per countdown
+    countdown.innerText = --seconds;
+}, 1000)
 //ELABORAZIONE
+
 
 // gestione dell'evento di controllo dopo il click
 
