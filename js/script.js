@@ -23,6 +23,7 @@ const form = document.getElementById("answers-form");
 
 const okButton = document.querySelector(".btn-primary");
 
+//----------------------------------------------__----------------------
 //creazione cronometro di 30 secondi
 
 //variabile del timer
@@ -42,6 +43,11 @@ timer =setInterval( () => {
         clearInterval(timer);
     }
 }, 1000)
+//----------------------------------------------__----------------------
+ //qua stiamo mostrando i 5 numeri dalla funzione che abbiamo creato precedentemente
+numberlist.innerText = (getArrRadnomNumInRangeTotEl(1, 50, 5));
+
+
 //ELABORAZIONE
 
 
